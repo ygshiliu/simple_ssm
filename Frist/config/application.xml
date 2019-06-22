@@ -10,7 +10,7 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
 	
 	<!-- 组件扫描 -->
-	<context:component-scan base-package="com.xueyuan,cn.mbg">
+	<context:component-scan base-package="com.xueyuan">
 		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
 	</context:component-scan>
 	
@@ -36,13 +36,11 @@
 	<bean class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="configLocation" value="classpath:mybatis-config.xml"></property>
 		<property name="dataSource" ref="dataSource"></property>
-		<!-- <property name="mapperLocations" value="classpath:mapper/*.xml"></property> -->
-		<property name="mapperLocations" value="classpath:cn/mbg/dao/*.xml"></property>
+		<property name="mapperLocations" value="classpath:mapper/*.xml"></property>
 	</bean>
 	
 	<!-- 2. 解决Mapper接口代理实现类对象的创建及管理 	-->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<!-- <property name="basePackage" value="com.xueyuan.mapper"></property> -->
-		<property name="basePackage" value="cn.mbg.mapper"></property>
+		<property name="basePackage" value="com.xueyuan.mapper"></property>
 	</bean>
 </beans>

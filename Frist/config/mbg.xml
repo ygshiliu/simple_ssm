@@ -6,7 +6,7 @@
 	<!-- targetRuntime: 执行生成的逆向工程的版本 MyBatis3Simple: 生成基本的CRUD MyBatis3: 生成带条件的CRUD -->
 	<context id="DB2Tables" targetRuntime="MyBatis3Simple">
 
-		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+		<jdbcConnection  driverClass="com.mysql.jdbc.Driver"
 			connectionURL="jdbc:mysql://localhost:3306/bookstore" userId="root"
 			password="root">
 		</jdbcConnection>
@@ -29,5 +29,8 @@
 		</javaClientGenerator>
 		<!-- 逆向分析的表 -->
 		<table tableName="bs_users" domainObjectName="User"></table>
+		<table tableName="bs_books" domainObjectName="Book"></table>
+		<table tableName="bs_orders" domainObjectName="Order"></table>
+		<table tableName="bs_order_details" domainObjectName="OrderDetail"></table>
 	</context>
 </generatorConfiguration>
